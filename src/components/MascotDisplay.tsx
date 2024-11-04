@@ -11,7 +11,7 @@ const MascotDisplay = ({
 }: MascotProps ) => {
   return (
     <>
-        <img src={"/assets/images/mascots/"+type+"-"+stage+"-"+color+".PNG"} className='w-full h-64'></img>
+        <img src={"/assets/images/mascots/"+type+"-"+stage+"-"+color+".PNG"} className='w-full h-64' alt={"Pixel art of a "+color+" stage "+stage+" "+type}></img>
     </>
   )
 }
