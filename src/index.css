@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: hsl(11, 100%, 30%);
+    --color-secondary: hsl(11, 79%, 48%);
+    --color-text-base: hsl(0, 0%, 90%);
+    --color-bg-primary: hsl(3, 0%, 17%);
+  }
+}
