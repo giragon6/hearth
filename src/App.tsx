@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 import Streak from './components/Streak'
-import Button from './components/Button';
 import NavBar from './components/NavBar';
+import Settings from './components/Settings';
+import Goal from './components/Goal';
 
 
 const App = () => {
   const [ isSettingsActive, setIsSettingsActive ] = useState(false);
+  const [ goal, setGoal ] = useState("None")
 
   return (
     <>
-      <NavBar isSettingsActive={isSettingsActive} setIsSettingsActive={setIsSettingsActive} />
-      
-      { isSettingsActive 
-        && <div className='grid min-h-[100px] min-w-[300px] place-items-center p-4 bg-bgPrimary'>
-          <h1>settings, eventually</h1>
-        </div>
-      }
-      <div className='grid min-h-[100px] min-w-[300px] place-items-center p-4 bg-bgPrimary'>
+      <div className='grid p-4 min-w-[300px] bg-bgPrimary font-serif text-tBase'>
+        <NavBar isSettingsActive={isSettingsActive} setIsSettingsActive={setIsSettingsActive} />
+        
+        { isSettingsActive && <Settings goal={goal} setGoal={setGoal} /> }
+
+        <Goal goal={goal}/>
+
         <Streak />
       </div>
     </>

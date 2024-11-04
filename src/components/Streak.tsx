@@ -24,12 +24,12 @@ const Streak = () => {
 
     return (
         <>
-            <div className='py-4 text-tBase font-serif font-medium object-center'>Streak: {streak} days</div>
+            <div className='py-4font-medium object-center'>Streak: {streak} days</div>
             <MascotDisplay stage={getStage(streak)} color="red" />
             <Button 
                 disabled={lastDate == now.toDateString()} 
                 children="Increase streak" 
-                className='w-full px-2 py-4 bg-primary enabled:hover:bg-secondary text-tBase font-serif disabled:opacity-75 disabled:cursor-not-allowed' 
+                className='w-full px-2 py-4 bg-primary enabled:hover:bg-secondarydisabled:opacity-75 disabled:cursor-not-allowed' 
                 onClick={handleIncrement}
             />
         </>

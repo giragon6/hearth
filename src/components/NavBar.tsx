@@ -7,9 +7,13 @@ type NavBarProps = {
 
 const NavBar = ({ isSettingsActive, setIsSettingsActive }: NavBarProps) => {
     return(
-        <nav className='grid grid-cols-10 grid-rows-1 bg-bgPrimary h-4'>
-        <h1 className='col-span-full text-center text-tBase text-lg font-bold font-serif content-center'>Hearth</h1>
-        <Button onClick={() => setIsSettingsActive(!isSettingsActive)} children="⚙" className='text-tBase text-lg rounded-lg bg-primary hover:bg-secondary'/>
+        <nav className='flex'>
+            <h1 className='w-11/12 text-center text-lg font-bold'>Hearth</h1>
+            <Button 
+                onClick={() => setIsSettingsActive(!isSettingsActive)} 
+                children="⚙" 
+                className='w-1/12 text-lg rounded-lg bg-primary hover:bg-secondary'
+            />
         </nav>
     )
 }
