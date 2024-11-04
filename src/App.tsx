@@ -1,27 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Streak from './components/Streak'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Button from './components/Button';
+import NavBar from './components/NavBar';
+
 
 const App = () => {
+  const [ isSettingsActive, setIsSettingsActive ] = useState(false);
+
   return (
     <>
-    <Tabs>
-        <TabList>
-          <Tab>Main</Tab>
-          <Tab>Settings</Tab>
-        </TabList>
-
-        <TabPanel>
-          <div className='grid min-h-[100px] min-w-[300px] place-items-center p-4 bg-bgPrimary'>
-            <Streak />
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className='grid min-h-[100px] min-w-[300px] place-items-center p-4 bg-bgPrimary'>
-            <h1>settings, eventually</h1>
-          </div>
-        </TabPanel>
-      </Tabs>
+      <NavBar isSettingsActive={isSettingsActive} setIsSettingsActive={setIsSettingsActive} />
+      
+      { isSettingsActive 
+        && <div className='grid min-h-[100px] min-w-[300px] place-items-center p-4 bg-bgPrimary'>
+          <h1>settings, eventually</h1>
+        </div>
+      }
+      <div className='grid min-h-[100px] min-w-[300px] place-items-center p-4 bg-bgPrimary'>
+        <Streak />
+      </div>
     </>
   )
 }

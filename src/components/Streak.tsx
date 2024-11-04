@@ -28,8 +28,8 @@ const Streak = () => {
             <MascotDisplay stage={getStage(streak)} color="red" />
             <Button 
                 disabled={lastDate == now.toDateString()} 
-                text="Increase streak" 
-                className='w-full px-2 py-4 bg-primary enabled:hover:bg-secondary text-tBase font-serif disabled:opacity-75 disabled:cursor-not-allowed disabled:' 
+                children="Increase streak" 
+                className='w-full px-2 py-4 bg-primary enabled:hover:bg-secondary text-tBase font-serif disabled:opacity-75 disabled:cursor-not-allowed' 
                 onClick={handleIncrement}
             />
         </>
