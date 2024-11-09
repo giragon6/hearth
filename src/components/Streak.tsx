@@ -1,39 +1,13 @@
-import { useStreakStore } from '../utils/useStreakStore'
-import { useDateStore } from '../utils/useDateStore';
-import Button from '../components/Button';
-import MascotDisplay from './MascotDisplay';
+type StreakProps = {
+  streak?: number;
+};
 
-const Streak = () => {
-    const [streak, setStreak] = useStreakStore();
-    const [lastDate, setLastDate] = useDateStore();
+const StreakDisplay = ({ streak }: StreakProps) => {
+  return (
+    <div className="font-medium">
+      Streak: {streak === null ? 0 : streak} days
+    </div>
+  );
+};
 
-    const getStage = (streak: number) => {
-        if (streak <= 5) return "0";
-        if (streak <= 15) return "1";
-        if (streak <= 35) return "2";
-        return "3"; 
-    }
-
-    const handleIncrement = () => {
-        setStreak(prev => (prev + 1));
-        const today = new Date();
-        setLastDate(today.toDateString());
-    };
-
-    const now = new Date();
-
-    return (
-        <>
-            <div className='py-4font-medium object-center'>Streak: {streak} days</div>
-            <MascotDisplay stage={getStage(streak)} color="red" />
-            <Button 
-                disabled={lastDate == now.toDateString()} 
-                children="Increase streak" 
-                className='w-full px-2 py-4 bg-primary enabled:hover:bg-secondarydisabled:opacity-75 disabled:cursor-not-allowed' 
-                onClick={handleIncrement}
-            />
-        </>
-    )
-}
-
-export default Streak
+export default StreakDisplay;
