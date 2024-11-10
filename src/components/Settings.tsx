@@ -7,7 +7,7 @@ const Settings = ({ goal, setGoal }: SettingsProps) => {
   return (
     <div className="grid p-2">
 
-      <label className="text-tBase m-1">
+      <label className="text-tBase m-4">
         Goal:
         <input
           value={goal}

@@ -26,7 +26,7 @@ const App = () => {
 
   return (
     <>
-      <div className="grid p-4 min-w-[300px] bg-bgPrimary text-sm font-serif text-tBase">
+      <div className="grid min-w-[300px] bg-bgPrimary p-4 font-serif text-sm text-tBase">
         <NavBar
           isSettingsActive={isSettingsActive}
           setIsSettingsActive={setIsSettingsActive}
@@ -43,7 +43,7 @@ const App = () => {
         <Button
           disabled={lastDate == now.toDateString()}
           children="Increase streak"
-          className="w-full px-2 py-4 bg-primary enabled:hover:bg-secondarydisabled:opacity-75 disabled:cursor-not-allowed"
+          className="enabled:hover:bg-secondarydisabled:opacity-75 w-full bg-primary px-2 py-4 disabled:cursor-not-allowed"
           onClick={handleStreakIncrement}
         />
       </div>
