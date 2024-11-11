@@ -4,8 +4,8 @@ type TextStreakDisplayProps = {
 
 const TextStreakDisplay = ({ streak }: TextStreakDisplayProps) => {
   return (
-    <div className="justify-center font-medium">
-      {streak} days
+    <div className="text-center text-lg italic">
+      <span className="font-bold">{streak}</span> day{streak!=1 && "s"} old
     </div>
   );
 };

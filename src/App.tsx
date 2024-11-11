@@ -37,15 +37,15 @@ const App = () => {
 
         <Goal goal={goal} />
 
-        <TextStreakDisplay streak={streak} />
-
         <WeekStreakDisplay streak={streak} dayOfWeek={parseInt(lastDate.dayOfWeek)} />
 
         <MascotDisplay stage={getStage(streak)} color="red" />
 
+        <TextStreakDisplay streak={streak} />
+
         <Button
           disabled={lastDate.dateString == now.toDateString()}
-          children="Increase streak"
+          children="Complete goal"
           className="enabled:hover:bg-secondarydisabled:opacity-75 w-full bg-primary px-2 py-4 disabled:cursor-not-allowed"
           onClick={handleStreakIncrement}
         />
