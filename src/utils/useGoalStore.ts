@@ -5,5 +5,5 @@ const INITIAL_VALUE: string = "None";
 
 export const useGoalStore = createChromeStorageStateHookSync(
   GOAL_KEY,
-  INITIAL_VALUE
+  INITIAL_VALUE,
 );

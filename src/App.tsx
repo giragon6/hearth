@@ -1,5 +1,6 @@
 import { useState } from "react";
-import StreakDisplay from "./components/Streak";
+import TextStreakDisplay from "./components/TextStreakDisplay";
+import WeekStreakDisplay from "./components/WeekStreakDisplay";
 import NavBar from "./components/NavBar";
 import Settings from "./components/Settings";
 import Goal from "./components/Goal";
@@ -10,7 +11,7 @@ import { useDateStore } from "./utils/useDateStore";
 import { useGoalStore } from "./utils/useGoalStore";
 import getStage from "./utils/Stage";
 
-const App = () => {
+const App = () => {  
   const [isSettingsActive, setIsSettingsActive] = useState(false);
   const [goal, setGoal] = useGoalStore();
   const [lastDate, setLastDate] = useDateStore();
@@ -19,7 +20,7 @@ const App = () => {
   const handleStreakIncrement = () => {
     setStreak((prev) => prev + 1);
     const today = new Date();
-    setLastDate(today.toDateString());
+    setLastDate( { dateString: today.toDateString(), dayOfWeek: today.getDay().toString() });
   };
 
   const now = new Date();
@@ -36,12 +37,14 @@ const App = () => {
 
         <Goal goal={goal} />
 
-        <StreakDisplay streak={streak} />
+        <TextStreakDisplay streak={streak} />
+
+        <WeekStreakDisplay streak={streak} dayOfWeek={parseInt(lastDate.dayOfWeek)} />
 
         <MascotDisplay stage={getStage(streak)} color="red" />
 
         <Button
-          disabled={lastDate == now.toDateString()}
+          disabled={lastDate.dateString == now.toDateString()}
           children="Increase streak"
           className="enabled:hover:bg-secondarydisabled:opacity-75 w-full bg-primary px-2 py-4 disabled:cursor-not-allowed"
           onClick={handleStreakIncrement}

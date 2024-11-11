@@ -6,8 +6,7 @@ type SettingsProps = {
 const Settings = ({ goal, setGoal }: SettingsProps) => {
   return (
     <div className="grid p-2">
-
-      <label className="text-tBase m-4">
+      <label className="m-4 text-tBase">
         Goal:
         <input
           value={goal}
@@ -17,7 +16,6 @@ const Settings = ({ goal, setGoal }: SettingsProps) => {
           className="bg-bgInverse text-tInverse"
         />
       </label>
-
     </div>
   );
 };

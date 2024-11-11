@@ -4,15 +4,12 @@
 
 @layer components {
   .emoji-flame-active {
+    color: rgba(255, 0, 0, 1);
+    display: inline-block;
   }
-  .emoji-flame {
+  .emoji-flame-inactive {
     color: rgba(255, 255, 255, 0.4);
-    text-shadow:
-      0 0 0 #cc2e75,
-      -1px -1px 0 var(--color-text-outline),
-      1px -1px 0 var(--color-text-outline),
-      -1px 1px 0 var(--color-text-outline),
-      1px 1px 0 var(--color-text-outline);
+    display: inline-block;
   }
 }
 

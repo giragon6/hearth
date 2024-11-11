@@ -4,7 +4,7 @@ type GoalProps = {
 
 const Goal = ({ goal }: GoalProps) => {
   return (
-    <div className="py-4 text-wrap font-medium object-center">Goal: {goal}</div>
+    <div className="text-wrap object-center py-4 font-medium">Goal: {goal}</div>
   );
 };
 

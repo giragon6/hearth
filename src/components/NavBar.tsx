@@ -12,7 +12,7 @@ const NavBar = ({ isSettingsActive, setIsSettingsActive }: NavBarProps) => {
       <Button
         onClick={() => setIsSettingsActive(!isSettingsActive)}
         children="⚙"
-        className="w-1/12 text-lg rounded-lg bg-primary hover:bg-secondary"
+        className="w-1/12 rounded-lg bg-primary text-lg hover:bg-secondary"
       />
     </nav>
   );
